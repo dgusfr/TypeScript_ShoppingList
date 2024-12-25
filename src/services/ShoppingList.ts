@@ -22,6 +22,10 @@ export class ShoppingList {
             return total + price * item.quantity;
         }, 0);
     }
+    removeItemByName(name: string): void {
+        this.items = this.items.filter(item => item.name.toLowerCase() !== name.toLowerCase());
+    }
+    
 
     exportAsCSV(): string {
         const headers = 'ID,Name,Quantity,Category\n';
