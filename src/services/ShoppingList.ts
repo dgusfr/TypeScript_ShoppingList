@@ -22,6 +22,13 @@ export class ShoppingList {
             return total + price * item.quantity;
         }, 0);
     }
+
+    exportAsCSV(): string {
+        const headers = 'ID,Name,Quantity,Category\n';
+        const rows = this.items.map(item => `${item.id},${item.name},${item.quantity},${item.category}`).join('\n');
+        return headers + rows;
+    }
+    
     
 
     getItemById(id: number): Item | undefined {
