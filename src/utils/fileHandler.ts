@@ -1,4 +1,4 @@
-import fs from 'fs';
+import * as fs from 'fs';
 
 export const saveToFile = (filePath: string, data: string): void => {
     fs.writeFileSync(filePath, data, 'utf-8');
