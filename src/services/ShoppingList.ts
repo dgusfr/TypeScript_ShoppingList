@@ -25,6 +25,14 @@ export class ShoppingList {
     removeItemByName(name: string): void {
         this.items = this.items.filter(item => item.name.toLowerCase() !== name.toLowerCase());
     }
+
+    countItemsByCategory(): Record<string, number> {
+        return this.items.reduce((acc, item) => {
+            acc[item.category] = (acc[item.category] || 0) + item.quantity;
+            return acc;
+        }, {} as Record<string, number>);
+    }
+    
     
 
     exportAsCSV(): string {
