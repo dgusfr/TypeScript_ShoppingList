@@ -4,6 +4,9 @@ export class ShoppingList {
     private items: Item[] = [];
 
     addItem(name: string, quantity: number, category: string): void {
+        if (!name || quantity <= 0 || !category) {
+            throw new Error('Nome, quantidade e categoria são obrigatórios, e a quantidade deve ser maior que 0.');
+        }
         const newItem: Item = {
             id: this.items.length + 1,
             name,
@@ -12,7 +15,7 @@ export class ShoppingList {
         };
         this.items.push(newItem);
     }
-
+    
     getList(): Item[] {
         return this.items;
     }
