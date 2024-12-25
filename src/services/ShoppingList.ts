@@ -33,6 +33,18 @@ export class ShoppingList {
         }, {} as Record<string, number>);
     }
     
+    addItem(name: string, quantity: number, category: string): void {
+        if (this.items.some(item => item.name.toLowerCase() === name.toLowerCase())) {
+            throw new Error('Item já existe na lista.');
+        }
+        const newItem: Item = {
+            id: this.items.length + 1,
+            name,
+            quantity,
+            category,
+        };
+        this.items.push(newItem);
+    }
     
 
     exportAsCSV(): string {
