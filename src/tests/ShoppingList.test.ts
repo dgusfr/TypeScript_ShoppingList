@@ -1,4 +1,5 @@
-import { ShoppingList } from '../src/services/ShoppingList';
+import { ShoppingList } from '../services/ShoppingList'; /
+
 
 describe('ShoppingList', () => {
     let list: ShoppingList;
