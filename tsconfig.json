@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
+    "types": ["jest"], 
     "target": "ES6",
     "module": "CommonJS",
     "outDir": "./dist",
     "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
-    "typeRoots": ["./node_modules/@types"]
+    "strict": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "tests/**/*"], // Inclui a pasta de testes
   "exclude": ["node_modules"]
 }
