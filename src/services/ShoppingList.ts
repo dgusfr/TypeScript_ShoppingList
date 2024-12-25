@@ -15,7 +15,15 @@ export class ShoppingList {
         };
         this.items.push(newItem);
     }
+
+    calculateTotalValue(prices: Record<string, number>): number {
+        return this.items.reduce((total, item) => {
+            const price = prices[item.name] || 0;
+            return total + price * item.quantity;
+        }, 0);
+    }
     
+
     getItemById(id: number): Item | undefined {
         return this.items.find(item => item.id === id);
     }
