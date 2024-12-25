@@ -1,4 +1,4 @@
-import { saveToFile, loadFromFile } from '../src/utils/fileHandler';
+import { saveToFile, loadFromFile } from '../utils/fileHandler'; 
 import fs from 'fs';
 
 jest.mock('fs');
