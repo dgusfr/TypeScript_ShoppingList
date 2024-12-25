@@ -16,6 +16,11 @@ export class ShoppingList {
         this.items.push(newItem);
     }
     
+    getItemById(id: number): Item | undefined {
+        return this.items.find(item => item.id === id);
+    }
+    
+    
     getList(): Item[] {
         return this.items;
     }
